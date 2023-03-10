@@ -31,13 +31,24 @@ What do we expect (for all levels)?
 - [ ] Tests
 
 
+# Required
+MVVM;
+Kotlin;
+Retrofit;
+OkHttp with LoggingInterceptor;
+Error Handling;
+The project must compile.
+
 # Differential
 CI;
-MVVM;
-Clean Architecture;
+UI Tests;
+Clean Architecture.
 
 
 # Instructions
 1. Fork this project (do not clone it directly);
 2. Work on the project normally and commit;
-3. Open a PR targeting our challenge repository.
+3. Add a readme with what you done and what you could have done if you had more time.
+4. Open a PR targeting our challenge repository.
+
+Api Doc: https://developers.themoviedb.org/3/getting-started/introduction
