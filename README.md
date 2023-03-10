@@ -16,7 +16,7 @@ Remembering that you’re free to change everything (dependencies, gradle, class
 Refactor the existing app that allows the user to be able to:
 - [ ] watch one random trailer from any source (this can be a static link;
 - [ ] see the trending movies;
-- [ ] see the top 10 series of a certain category that will be choosen by the user;
+- [ ] see the top 10 series of a certain category that will be chosen by the user;
 - [ ] click on any item (TvShow or Movie) and see the details screen with related data. ?? Maybe use this on medium/senior positions…
 
 The layout must have:
@@ -31,7 +31,7 @@ What do we expect (for all levels)?
 - [ ] Tests
 
 
-# Diferential
+# Differential
 CI;
 MVVM;
 Clean Architecture;
