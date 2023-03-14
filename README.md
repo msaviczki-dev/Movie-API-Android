@@ -47,7 +47,7 @@ What do we expect?
 
 The project must compile for the entry to be considered.
 
-## Differential
+## Preferred
 
 For those looking to go above and beyond:
 
