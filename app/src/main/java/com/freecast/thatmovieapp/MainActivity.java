@@ -39,7 +39,7 @@ import okhttp3.ResponseBody;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static String api_key = "_YOUR_API_KEY_HERE";
+    private static String api_key = "9cc570f7006eef3990bf3b17318f7cd7";
     private static String base_url_movies_top_rated = "https://api.themoviedb.org/3/movie/top_rated?api_key=";
     private SimpleExoPlayer player = null;
     private PlayerView player_view;

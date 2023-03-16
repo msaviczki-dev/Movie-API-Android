@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_marginTop="8dp">
+
+    <View
+        android:id="@+id/view_container_movies"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:background="@color/dark_blue_80"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_movies"
+        android:layout_width="120dp"
+        android:layout_height="180dp"
+        android:layout_marginStart="16dp"
+        android:background="@color/dark_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_movie_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Filmes"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/img_movies"
+        app:layout_constraintTop_toTopOf="@id/view_container_movies" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_movie_director"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Director: Spierbe"
+        android:textColor="@color/light_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/txt_movie_title"
+        app:layout_constraintTop_toBottomOf="@id/txt_movie_title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_movie_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Duration: 11h"
+        android:textColor="@color/light_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/txt_movie_title"
+        app:layout_constraintTop_toBottomOf="@id/txt_movie_director" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_movie_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="7.3"
+        android:textColor="@color/rate_yellow"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/txt_movie_title"
+        app:layout_constraintTop_toBottomOf="@id/txt_movie_time" />
+
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:id="@+id/rate_movie_stars"
+        style="?android:attr/ratingBarStyleIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:scaleY="0.8"
+        android:scaleX="0.8"
+        android:rating="4"
+        app:layout_constraintStart_toEndOf="@id/txt_movie_rate"
+        app:layout_constraintBottom_toBottomOf="@id/txt_movie_rate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txt_movie_rate" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
