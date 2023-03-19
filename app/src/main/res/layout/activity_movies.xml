@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/dark_blue"
     android:fillViewport="true"
     android:overScrollMode="never">
@@ -18,7 +18,7 @@
             android:id="@+id/txt_movies_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Filmes"
+            android:text="Movies"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -26,14 +26,32 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_movies"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="24dp"
-            tools:listitem="@layout/movies_item"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txt_movies_title" />
+            app:layout_constraintTop_toBottomOf="@id/txt_movies_title"
+            tools:listitem="@layout/movies_item" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_movies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="txt_movies_title,recycler_movies" />
+
+        <ProgressBar
+            android:id="@+id/loading_movies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
