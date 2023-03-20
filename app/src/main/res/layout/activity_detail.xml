@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dark_blue"
@@ -20,6 +21,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_detail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -68,20 +70,46 @@
                 app:layout_constraintTop_toTopOf="@id/txt_movie_rate" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_movie_original_title"
+                android:id="@+id/txt_movie_detail_overview"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ellipsize="end"
+                android:maxLines="5"
                 android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor quis lectus in vehicula. Nulla quis nisi vitae velit pellentesque iaculis. Sed in neque odio. Aenean ut tellus quis velit vestibulum luctus a eu metus. Etiam viverra mattis erat, vitae lobortis turpis placerat at. Maecenas euismod feugiat commodo. Vivamus suscipit tortor ac massa maximus cursus. Donec sit amet massa malesuada, blandit diam nec, malesuada erat. Nam libero mi, tristique eget semper et, tincidunt at lorem. Sed tincidunt blandit tellus. Sed lacus augue, lobortis a congue lobortis, tincidunt eu lacus."
                 android:textColor="@color/light_blue"
-                android:layout_marginTop="16dp"
-                android:maxLines="5"
-                android:ellipsize="end"
-                app:layout_constraintTop_toBottomOf="@id/txt_movie_rate"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_movie_rate" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_movie_detail_companies"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:text="Companies"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/constraint_detail" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_movie_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_movie_detail_companies"
+            tools:listitem="@layout/companies_item" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

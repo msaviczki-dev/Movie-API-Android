@@ -2,8 +2,9 @@ package com.freecast.thatmovieapp.data.response
 
 import com.google.gson.annotations.SerializedName
 
-data class MovieDetailResponse(
+data class TVDetailResponse(
     @SerializedName("original_title") val title: String?,
+    @SerializedName("backdrop_path") val poster: String?,
     @SerializedName("vote_average") val vote: Float?,
     @SerializedName("overview") val overview: String?,
     @SerializedName("production_companies") val companies: List<ProductionCompaniesResponse>?

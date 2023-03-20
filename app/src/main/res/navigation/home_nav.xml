@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_nav"
+    app:startDestination="@id/movieFragment">
+
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.freecast.thatmovieapp.presentation.movie.view.fragment.MovieFragment"
+        android:label="MovieFragment" />
+    <fragment
+        android:id="@+id/tvFragment"
+        android:name="com.freecast.thatmovieapp.presentation.tv.view.fragment.TVFragment"
+        android:label="TVFragment" />
+</navigation>

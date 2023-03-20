@@ -1,9 +1,9 @@
 package com.freecast.thatmovieapp.data.mapper
 
-import com.freecast.thatmovieapp.data.response.MovieDetailResponse
+import com.freecast.thatmovieapp.data.response.DetailResponse
 import com.freecast.thatmovieapp.data.response.MovieResponse
 import com.freecast.thatmovieapp.domain.entities.MovieData
-import com.freecast.thatmovieapp.domain.entities.MovieDetailData
+import com.freecast.thatmovieapp.domain.entities.DetailData
 
 fun List<MovieResponse.MovieDataResponse>?.toMap(): List<MovieData> {
     val list = mutableListOf<MovieData>()
@@ -23,23 +23,26 @@ fun List<MovieResponse.MovieDataResponse>?.toMap(): List<MovieData> {
     return list
 }
 
-fun MovieDetailResponse?.toMap(): MovieDetailData {
-    val companies = mutableListOf<MovieDetailData.ProductionCompaniesData>()
+fun DetailResponse?.toMap(): DetailData {
+    val companies = mutableListOf<DetailData.ProductionCompaniesData>()
     this?.let { response ->
         response.companies?.let { companiesList ->
             companiesList.map { item ->
                 companies.add(
-                    MovieDetailData.ProductionCompaniesData(
+                    DetailData.ProductionCompaniesData(
                         logo = item.logo.orEmpty(), name = item.name.orEmpty()
                     )
                 )
             }
-            return MovieDetailData(
+            return DetailData(
                 title = response.title.orEmpty(),
+                tvTitle = response.name.orEmpty(),
+                poster = response.poster.orEmpty(),
                 vote = response.vote ?: 0.0f,
+                voteRate = (response.vote ?: 0.0F) / 2,
                 overview = response.overview.orEmpty(),
                 companies = companies
             )
         }
-    } ?: kotlin.run { return MovieDetailData() }
+    } ?: kotlin.run { return DetailData() }
 }

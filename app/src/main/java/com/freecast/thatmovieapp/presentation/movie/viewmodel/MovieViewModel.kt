@@ -18,9 +18,7 @@ class MovieViewModel(private val useCase: GetMovieUseCase) : ViewModel() {
 
     fun getMovie() {
         viewModelScope.launch {
-            useCase().onStart {
-                _movieFlow.value = Result.Loading
-            }
+            useCase().onStart { _movieFlow.value = Result.Loading }
                 .catch { error -> _movieFlow.value = Result.Error(error) }
                 .collect { result -> _movieFlow.value = Result.Success(result) }
         }
