@@ -2,21 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginStart="4dp"
-    android:layout_marginEnd="4dp"
+    android:layout_marginStart="@dimen/dimen_4dp"
+    android:layout_marginEnd="@dimen/dimen_4dp"
     android:background="@drawable/background_gender">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txt_gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:text="asdfasdf"
+        android:layout_marginStart="@dimen/dimen_16dp"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        android:layout_marginEnd="@dimen/dimen_16dp"
+        android:layout_marginBottom="@dimen/dimen_8dp"
         android:textColor="@color/gender_text_color"
-        android:textSize="16sp"
+        android:textSize="@dimen/dimen_16sp"
         android:textStyle="bold" />
 
 </LinearLayout>

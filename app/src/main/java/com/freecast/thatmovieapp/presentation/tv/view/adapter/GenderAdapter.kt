@@ -23,7 +23,7 @@ class GenderAdapter(
     }
 
     private fun refreshSelectedItem() {
-        list.forEach { item -> item.isSelected = true }
+        list.forEach { item -> item.isNotSelected = true }
     }
 
     override fun getItemCount(): Int = list.size
@@ -36,14 +36,14 @@ class GenderAdapter(
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: TVGenreData, position: Int) = binding.apply {
-            root.isSelected = item.isSelected
-            txtGender.isSelected = item.isSelected
+            root.isSelected = item.isNotSelected
+            txtGender.isSelected = item.isNotSelected
 
             txtGender.text = item.name
 
             root.setOnClickListener {
                 refreshSelectedItem()
-                list[position].isSelected = false
+                list[position].isNotSelected = false
                 notifyDataSetChanged()
                 listener.onGenderClick(item.id)
             }

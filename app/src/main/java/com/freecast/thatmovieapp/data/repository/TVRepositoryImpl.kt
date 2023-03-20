@@ -10,7 +10,7 @@ import com.freecast.thatmovieapp.network.api.TVApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-class TVRespositoryImpl(private val api: TVApi) : TVRespository {
+class TVRepositoryImpl(private val api: TVApi) : TVRepository {
 
     override fun getTV(): Flow<List<TVData>> = flow {
         emit(api.getTV(BuildConfig.API_KEY).data().result.toMapTV())

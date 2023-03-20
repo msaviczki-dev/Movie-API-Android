@@ -1,4 +1,4 @@
-package com.freecast.thatmovieapp.movie
+package com.freecast.thatmovieapp.tests
 
 import com.freecast.thatmovieapp.data.MOVIE_DATA
 import com.freecast.thatmovieapp.data.MOVIE_RESPONSE

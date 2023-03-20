@@ -10,6 +10,8 @@ import com.freecast.thatmovieapp.data.result.Result
 import com.freecast.thatmovieapp.databinding.FragmentMovieBinding
 import com.freecast.thatmovieapp.domain.entities.MovieData
 import com.freecast.thatmovieapp.helper.base.FragmentViewBinding
+import com.freecast.thatmovieapp.helper.const.ExtraBundleConst.IS_MOVIE
+import com.freecast.thatmovieapp.helper.const.ExtraBundleConst.MOVIE_ID
 import com.freecast.thatmovieapp.helper.extension.launch
 import com.freecast.thatmovieapp.presentation.movie.view.adapter.MovieAdapter
 import com.freecast.thatmovieapp.presentation.movie.viewmodel.MovieViewModel
@@ -27,8 +29,15 @@ class MovieFragment : FragmentViewBinding<FragmentMovieBinding>(), MovieAdapter.
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        bindViews()
         observe()
         viewModel.getMovie()
+    }
+
+    private fun bindViews() = binding.apply {
+        errorLayout.btnTryAgain.setOnClickListener {
+            viewModel.getMovie()
+        }
     }
 
     private fun observe() = lifecycleScope.launchWhenCreated {
@@ -42,8 +51,10 @@ class MovieFragment : FragmentViewBinding<FragmentMovieBinding>(), MovieAdapter.
         }
     }
 
-    private fun onError() {
-
+    private fun onError() = binding.apply {
+        loadingMovies.isVisible = false
+        groupMovies.isVisible = false
+        errorLayout.root.isVisible = true
     }
 
     private fun onSuccess(list: List<MovieData>) = binding.apply {
@@ -58,13 +69,13 @@ class MovieFragment : FragmentViewBinding<FragmentMovieBinding>(), MovieAdapter.
     private fun onLoading() = binding.apply {
         loadingMovies.isVisible = true
         groupMovies.isVisible = false
+        errorLayout.root.isVisible = false
     }
 
     override fun onClick(movieId: Int) {
         requireActivity().launch<DetailActivity> {
-            putExtra(DetailActivity.MOVIE_ID, movieId)
-            putExtra(DetailActivity.IS_MOVIE, true)
+            putExtra(MOVIE_ID, movieId)
+            putExtra(IS_MOVIE, true)
         }
     }
-
 }

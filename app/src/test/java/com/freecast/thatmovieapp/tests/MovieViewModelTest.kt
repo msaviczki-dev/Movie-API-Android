@@ -1,4 +1,4 @@
-package com.freecast.thatmovieapp.movie
+package com.freecast.thatmovieapp.tests
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.freecast.thatmovieapp.data.MOVIE_DATA

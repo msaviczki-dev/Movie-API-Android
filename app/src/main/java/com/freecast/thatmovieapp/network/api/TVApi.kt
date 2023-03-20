@@ -12,4 +12,5 @@ interface TVApi {
 
     @GET("genre/tv/list")
     suspend fun getTVGenres(@Query("api_key") key: String): Response<TVGenreResponse>
+
 }

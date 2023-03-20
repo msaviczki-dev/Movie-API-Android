@@ -13,14 +13,14 @@ import kotlinx.coroutines.launch
 
 class DetailViewModel(private val useCase: GetDetailUseCase) : ViewModel() {
 
-    private val _movieDetailFlow = MutableStateFlow<Result<DetailData>>(Result.Idle)
-    val movieDetailFlow: StateFlow<Result<DetailData>> get() = _movieDetailFlow
+    private val _detailFlow = MutableStateFlow<Result<DetailData>>(Result.Idle)
+    val detailFlow: StateFlow<Result<DetailData>> get() = _detailFlow
 
-    fun getMovieDetail(id: Int, isMovie: Boolean) {
+    fun getDetail(id: Int, isMovie: Boolean) {
         viewModelScope.launch {
-            useCase(id, isMovie).onStart { _movieDetailFlow.value = Result.Loading }
-                .catch { error -> _movieDetailFlow.value = Result.Error(error) }
-                .collect { result -> _movieDetailFlow.value = Result.Success(result) }
+            useCase(id, isMovie).onStart { _detailFlow.value = Result.Loading }
+                .catch { error -> _detailFlow.value = Result.Error(error) }
+                .collect { result -> _detailFlow.value = Result.Success(result) }
         }
     }
 }

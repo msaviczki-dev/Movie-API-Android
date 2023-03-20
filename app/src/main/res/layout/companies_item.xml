@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/dimen_16dp"
     android:gravity="center"
-    android:layout_margin="16dp"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/img_companie"
-        android:layout_width="60dp"
-        app:tint="@color/white"
-        android:layout_height="60dp"
-        android:layout_margin="16dp" />
+        android:layout_width="@dimen/companies_img_dimens"
+        android:layout_height="@dimen/companies_img_dimens"
+        android:layout_margin="@dimen/dimen_16dp"
+        app:tint="@color/white" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txt_companie"
         android:layout_width="wrap_content"
-        android:textColor="@color/white"
-        android:textStyle="bold"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:ellipsize="end"
         android:gravity="center"
-        android:maxLength="20" />
+        android:maxLength="20"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 </LinearLayout>

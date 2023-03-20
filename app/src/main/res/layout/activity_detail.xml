@@ -15,7 +15,7 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/img_movie_detail"
             android:layout_width="0dp"
-            android:layout_height="260dp"
+            android:layout_height="@dimen/img_poster_dimens_height"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -24,9 +24,9 @@
             android:id="@+id/constraint_detail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_margin="@dimen/dimen_16dp"
             android:background="@color/dark_blue_80"
-            android:padding="16dp"
+            android:padding="@dimen/dimen_16dp"
             app:layout_constraintBottom_toBottomOf="@id/img_movie_detail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -36,10 +36,9 @@
                 android:id="@+id/txt_movie_detail_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Movies"
+                android:layout_marginTop="@dimen/dimen_24dp"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="@dimen/dimen_24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -48,10 +47,10 @@
                 android:id="@+id/txt_movie_rate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="@dimen/dimen_16dp"
                 android:text="7.3"
                 android:textColor="@color/rate_yellow"
-                android:textSize="24sp"
+                android:textSize="@dimen/dimen_24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/txt_movie_detail_title" />
@@ -73,7 +72,7 @@
                 android:id="@+id/txt_movie_detail_overview"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="@dimen/dimen_16dp"
                 android:ellipsize="end"
                 android:maxLines="5"
                 android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor quis lectus in vehicula. Nulla quis nisi vitae velit pellentesque iaculis. Sed in neque odio. Aenean ut tellus quis velit vestibulum luctus a eu metus. Etiam viverra mattis erat, vitae lobortis turpis placerat at. Maecenas euismod feugiat commodo. Vivamus suscipit tortor ac massa maximus cursus. Donec sit amet massa malesuada, blandit diam nec, malesuada erat. Nam libero mi, tristique eget semper et, tincidunt at lorem. Sed tincidunt blandit tellus. Sed lacus augue, lobortis a congue lobortis, tincidunt eu lacus."
@@ -82,19 +81,30 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/txt_movie_rate" />
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_detail_trailer"
+            android:layout_width="@dimen/btn_trailer_dimens"
+            android:layout_height="@dimen/btn_trailer_dimens"
+            app:layout_constraintBottom_toTopOf="@id/constraint_detail"
+            app:layout_constraintEnd_toEndOf="@id/constraint_detail"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintStart_toStartOf="@id/constraint_detail"
+            app:layout_constraintTop_toTopOf="@id/constraint_detail"
+            app:srcCompat="@drawable/ic_play"
+            app:tint="@color/teal_200" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txt_movie_detail_companies"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="@dimen/dimen_16dp"
+            android:layout_marginTop="@dimen/dimen_24dp"
+            android:layout_marginEnd="@dimen/dimen_16dp"
             android:text="Companies"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="@dimen/dimen_24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -110,7 +120,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txt_movie_detail_companies"
             tools:listitem="@layout/companies_item" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
