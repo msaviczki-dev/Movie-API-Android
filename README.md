@@ -38,3 +38,15 @@ the project has a sustainable and scalable architecture, using the best developm
 -YoutubeExtractor - to extract .MP4 of YouTube links (change in the version that existed in the project)
 
 -Glide - to load URL images
+
+## What could i do more if i had more time?
+
+-Lint and Detekt plugins
+
+-Modularization project by FEATURE
+
+-UI Tests
+
+-CI/CD with process conveyor
+
+-More beautiful interface with design system
