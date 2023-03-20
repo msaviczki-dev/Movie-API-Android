@@ -12,6 +12,27 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <include
+            android:id="@+id/error_layout"
+            layout="@layout/error_layout"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/loading_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="constraint_detail,img_movie_detail,img_detail_trailer,txt_movie_detail_companies,recycler_movie_detail" />
+
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/img_movie_detail"
             android:layout_width="0dp"
@@ -102,7 +123,7 @@
             android:layout_marginStart="@dimen/dimen_16dp"
             android:layout_marginTop="@dimen/dimen_24dp"
             android:layout_marginEnd="@dimen/dimen_16dp"
-            android:text="Companies"
+            android:text="@string/txt_detail_companies"
             android:textColor="@color/white"
             android:textSize="@dimen/dimen_24sp"
             android:textStyle="bold"

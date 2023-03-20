@@ -2,6 +2,7 @@ package com.freecast.thatmovieapp.presentation.detail.view.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.freecast.thatmovieapp.BuildConfig
 import com.freecast.thatmovieapp.data.result.Result
@@ -30,8 +31,13 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        bindViews()
         observe()
         setupRequest()
+    }
+
+    private fun bindViews() = binding.apply {
+        errorLayout.btnTryAgain.setOnClickListener { setupRequest() }
     }
 
     private fun observe() = lifecycleScope.launchWhenCreated {
@@ -45,15 +51,22 @@ class DetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun onError() {
-
+    private fun onError() = binding.apply {
+        groupDetail.isVisible = false
+        errorLayout.root.isVisible = true
+        loadingDetail.isVisible = false
     }
 
-    private fun onLoading() {
-
+    private fun onLoading() = binding.apply {
+        groupDetail.isVisible = false
+        errorLayout.root.isVisible = false
+        loadingDetail.isVisible = true
     }
 
     private fun onSuccess(data: DetailData) = binding.apply {
+        groupDetail.isVisible = true
+        errorLayout.root.isVisible = false
+        loadingDetail.isVisible = false
         val adapter = CompaniesAdapter(data.companies)
         txtMovieRate.text = data.vote.toString()
         imgDetailTrailer.setOnClickListener {

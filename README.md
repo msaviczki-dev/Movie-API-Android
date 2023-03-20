@@ -18,32 +18,32 @@ You’re free to change everything (dependencies, gradle, classes, modules, and/
 
 Refactor the existing app so it allows the user to:
 
-- [ ] Watch one random trailer from any source (this can be a static link)
-- [ ] See trending movies
-- [ ] See the top series for a certain category that will be chosen by the user
-- [ ] Click on any item (TV Show or Movie) and see the details screen with related data
+- [X] Watch one random trailer from any source (this can be a static link)
+- [X] See trending movies
+- [X] See the top series for a certain category that will be chosen by the user
+- [X] Click on any item (TV Show or Movie) and see the details screen with related data
 
 The layout must have:
 
-- [ ] A trailer (using ExoPlayer)
-- [ ] The two lists mentioned above
-- [ ] Poster, rating, description and title on the details screen
+- [X] A trailer (using ExoPlayer)
+- [X] The two lists mentioned above
+- [X] Poster, rating, description and title on the details screen
 
 What do we expect?
 
-- [ ] A lightweight and intuitive layout
-- [ ] Good code practices
-- [ ] Good architecture
-- [ ] The use of SOLID principles
-- [ ] Unit tests
+- [X] A lightweight and intuitive layout
+- [X] Good code practices
+- [X] Good architecture
+- [X] The use of SOLID principles
+- [X] Unit tests
 
 ## Required
 
-- MVVM
-- Kotlin
-- Retrofit
-- OkHttp with LoggingInterceptor
-- Error handling
+- MVVM - YES
+- Kotlin - YES
+- Retrofit - YES
+- OkHttp with LoggingInterceptor - YES
+- Error handling - ONLY A GENERIC CASE TO ERROS
 
 The project must compile for the entry to be considered.
 
@@ -51,9 +51,9 @@ The project must compile for the entry to be considered.
 
 For those looking to go above and beyond:
 
-- CI/CD
-- UI tests
-- Clean Architecture
+- CI/CD - YES
+- UI tests - NO
+- Clean Architecture - YES
 
 
 ## Instructions
@@ -64,3 +64,5 @@ For those looking to go above and beyond:
 4. Open a PR targeting our challenge repository
 
 API Docs: https://developers.themoviedb.org/3/getting-started/introduction
+
+## 
