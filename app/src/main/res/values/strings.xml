@@ -3,4 +3,5 @@
     <string name="error_layout_title">THERE WAS AN ERROR PLEASE TRY AGAIN LATER</string>
     <string name="error_layout_btn">TRY AGAIN</string>
     <string name="movie_title">Movies</string>
+    <string name="txt_detail_companies">Companies</string>
 </resources>
