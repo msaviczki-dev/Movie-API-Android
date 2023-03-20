@@ -15,7 +15,6 @@ class CompaniesAdapter(private val list: List<DetailData.ProductionCompaniesData
         val binding = CompaniesItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CompaniesViewHolder(binding)
     }
-
     override fun getItemCount(): Int = list.size
 
     override fun onBindViewHolder(holder: CompaniesViewHolder, position: Int) {
@@ -30,5 +29,4 @@ class CompaniesAdapter(private val list: List<DetailData.ProductionCompaniesData
             imgCompanie.loadImageCircle(BuildConfig.URL_POSTER + item.logo)
         }
     }
-
 }
