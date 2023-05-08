@@ -45,7 +45,7 @@ class PlayVideoActivity : AppCompatActivity() {
         setupRequest()
     }
 
-    fun setupRequest() {
+    private fun setupRequest() {
         movieId?.let { viewModel.getVideo(it, isMovie ?: false) } ?: kotlin.run { finish() }
     }
 
